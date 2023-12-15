@@ -1,11 +1,6 @@
 import { RouteProps } from 'react-router-dom';
 import { Role } from '@lib/api/models';
 import { RouteKeys } from '@lib/constants';
-import { WritePage } from '@components/pages/write';
-import { HomePage } from '@components/pages/home/';
-import { UserPage } from '@components/pages/user';
-import { LatestPage } from '@components/pages/latest';
-import { ArticlePage } from '@components/pages/article';
 
 export type RoutePropsType = RouteProps & {
   isPrivate: boolean;
@@ -13,74 +8,43 @@ export type RoutePropsType = RouteProps & {
 };
 
 export const RoutePaths = {
-  [RouteKeys.HOME]: '/',
-  [RouteKeys.SUBSCRIPTIONS]: '/subscriptions',
-  [RouteKeys.LATEST]: '/latest',
-  [RouteKeys.COMPANY]: '/company',
-  [RouteKeys.COMPANY_ID]: '/company/:id',
-  [RouteKeys.VACANCY]: '/vacancy',
-  [RouteKeys.VACANCY_ID]: '/vacancy/:id',
-  [RouteKeys.USER]: '/user',
-  [RouteKeys.USER_ID]: '/user/:id',
-  [RouteKeys.ARTICLE]: '/article',
-  [RouteKeys.ARTICLE_ID]: '/article/:id',
-  [RouteKeys.WRITE]: '/write',
+  [RouteKeys.BLOG]: '/',
+  [RouteKeys.COMMUNITIES]: '/communities',
+  [RouteKeys.DEFERRED_EVENTS]: '/deferred-events',
+  [RouteKeys.MY_EVENTS]: '/my-events',
+  [RouteKeys.PARTNERSHIPS]: '/partnerships',
+  [RouteKeys.RECOMMENDATIONS]: '/recommendations',
 };
 
 export const routerConfig: RoutePropsType[] = [
   {
     isPrivate: false,
-    path: RoutePaths[RouteKeys.HOME],
-    element: <HomePage />,
+    path: RoutePaths[RouteKeys.BLOG],
+    element: <div></div>,
   },
   {
     isPrivate: true,
-    path: RoutePaths[RouteKeys.SUBSCRIPTIONS],
-    element: <div>SUBSCRIPTIONS</div>,
+    path: RoutePaths[RouteKeys.MY_EVENTS],
+    element: <div></div>,
   },
   {
     isPrivate: false,
-    path: RoutePaths[RouteKeys.LATEST],
-    element: <LatestPage />,
+    path: RoutePaths[RouteKeys.COMMUNITIES],
+    element: <div></div>,
   },
   {
     isPrivate: false,
-    path: RoutePaths[RouteKeys.COMPANY],
-    element: <div>COMPANY</div>,
+    path: RoutePaths[RouteKeys.PARTNERSHIPS],
+    element: <div></div>,
   },
   {
     isPrivate: false,
-    path: RoutePaths[RouteKeys.COMPANY_ID],
-    element: <div>COMPANY_ID</div>,
+    path: RoutePaths[RouteKeys.DEFERRED_EVENTS],
+    element: <div></div>,
   },
   {
     isPrivate: false,
-    path: RoutePaths[RouteKeys.VACANCY],
-    element: <div>VACANCY</div>,
-  },
-  {
-    isPrivate: false,
-    path: RoutePaths[RouteKeys.VACANCY_ID],
-    element: <div>VACANCY_ID</div>,
-  },
-  {
-    isPrivate: false,
-    path: RoutePaths[RouteKeys.USER],
-    element: <UserPage />,
-  },
-  {
-    isPrivate: false,
-    path: RoutePaths[RouteKeys.USER_ID],
-    element: <div>USER_ID</div>,
-  },
-  {
-    isPrivate: false,
-    path: RoutePaths[RouteKeys.ARTICLE_ID],
-    element: <ArticlePage />,
-  },
-  {
-    isPrivate: true,
-    path: RoutePaths[RouteKeys.WRITE],
-    element: <WritePage />,
-  },
+    path: RoutePaths[RouteKeys.PARTNERSHIPS],
+    element: <div></div>,
+  }
 ];

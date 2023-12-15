@@ -1,1 +1,0 @@
-export { Bottombar } from './bottombar';

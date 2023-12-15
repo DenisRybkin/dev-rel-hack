@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { cn } from '@lib/utils/tools';
-import { sidebarLinks } from '@components/layoyts1/misc/links';
+import { sidebarLinks } from '@components/layouts/misc/links';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { AuthContext } from '@app/providers/auth';
@@ -26,16 +26,16 @@ export const SideBar = () => {
               key={link.label}
               onClick={handleClickLink(link.route)}
               className={cn(
-                'p-2 hover:bg-light'
+                'p-2 w-full text-base-medium cursor-pointer rounded-lg hover:bg-light'
               )}
             >
-              <p className="text-black">{(link.label)}</p>
+              <p className="text-black text-base-medium">{(link.label)}</p>
             </div>
           );
         })}
       </div>
       <div className='flex flex-col bg-white w-[106px] rounded-lg h-full p-7 gap-4'>
-        <div className="rounded-full border-1 border-gray p-3 flex items-center justify-center">
+        <div className="rounded-full border-2 border-gray p-3 flex items-center justify-center">
           <FiPlus className="text-gray" size={24}  />
         </div>
       </div>

@@ -3,7 +3,7 @@ import type {
   ErrorBoundaryError,
   ErrorBoundaryReset,
 } from '@app/providers/error-boundary/error-boundary';
-import { RootLayout } from '@components/layouts';
+import { RootLayout } from '@components/layouts/root-layout';
 import { Button } from '@components/ui/button';
 import { useNavigate } from 'react-router-dom';
 import { RoutePaths } from '@app/router';
@@ -20,7 +20,7 @@ export const ErrorFallback = (
   const { t } = useTranslation();
   const navigate = useNavigate();
 
-  const handleRedirectToHome = () => navigate(RoutePaths[RouteKeys.HOME]);
+  const handleRedirectToHome = () => navigate(RoutePaths[RouteKeys.BLOG]);
 
   return (
     <RootLayout>

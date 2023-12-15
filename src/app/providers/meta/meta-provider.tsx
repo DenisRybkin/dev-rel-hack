@@ -8,11 +8,12 @@ import { RouteKeys } from '@lib/constants';
 import { RoutePaths } from '@app/router';
 
 const routsWithDefaultTitle = [
-  RoutePaths[RouteKeys.HOME],
-  RoutePaths[RouteKeys.LATEST],
-  RoutePaths[RouteKeys.SUBSCRIPTIONS],
-  RoutePaths[RouteKeys.WRITE],
-  RoutePaths[RouteKeys.VACANCY],
+  RoutePaths[RouteKeys.BLOG],
+  RoutePaths[RouteKeys.PARTNERSHIPS],
+  RoutePaths[RouteKeys.COMMUNITIES],
+  RoutePaths[RouteKeys.MY_EVENTS],
+  RoutePaths[RouteKeys.DEFERRED_EVENTS],
+  RoutePaths[RouteKeys.RECOMMENDATIONS]
 ];
 
 export const MetaProvider = (props: IProviderProps) => {

@@ -6,7 +6,7 @@ import { api } from '@lib/api/plugins';
 
 export const SetupApi = (): null => {
   const navigate = useNavigate();
-  const onRefreshExpired = () => navigate(RoutePaths[RouteKeys.HOME]);
+  const onRefreshExpired = () => navigate(RoutePaths[RouteKeys.BLOG]);
   const onAccessExpired = async () => {
     localStorage.removeItem(LocalStorageKeys.JWT);
     const { access } = await api.auth.refresh();

@@ -2,7 +2,7 @@ import { Route, Routes, useLocation } from 'react-router-dom';
 import { routerConfig } from '@app/router/config';
 import { ProtectedRoute } from '@app/router/protected-route';
 import { useEffect } from 'react';
-import { RootLayout } from '@components/layoyts1/root-layout';
+import { RootLayout } from '@components/layouts/root-layout';
 
 export const Router = () => {
   const location = useLocation();
