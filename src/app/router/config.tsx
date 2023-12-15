@@ -1,6 +1,8 @@
 import { RouteProps } from 'react-router-dom';
 import { Role } from '@lib/api/models';
 import { RouteKeys } from '@lib/constants';
+import BlogPage from '@components/pages/blog/blog-page';
+import CompanyPage from '@components/pages/company/company-page';
 
 export type RoutePropsType = RouteProps & {
   isPrivate: boolean;
@@ -14,13 +16,14 @@ export const RoutePaths: Record<RouteKeys, string> = {
   [RouteKeys.MY_EVENTS]: '/my-events',
   [RouteKeys.PARTNERSHIPS]: '/partnerships',
   [RouteKeys.RECOMMENDATIONS]: '/recommendations',
+  [RouteKeys.MY_COMPANY]: '/my-company',
 };
 
 export const routerConfig: RoutePropsType[] = [
   {
     isPrivate: false,
     path: RoutePaths[RouteKeys.BLOG],
-    element: <div></div>,
+    element: <BlogPage />,
   },
   {
     isPrivate: false,
@@ -46,5 +49,10 @@ export const routerConfig: RoutePropsType[] = [
     isPrivate: false,
     path: RoutePaths[RouteKeys.RECOMMENDATIONS],
     element: <div></div>,
-  }
+  },
+  {
+    isPrivate: false,
+    path: RoutePaths[RouteKeys.MY_COMPANY],
+    element: <CompanyPage />,
+  },
 ];

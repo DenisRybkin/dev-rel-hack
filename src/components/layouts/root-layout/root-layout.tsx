@@ -14,7 +14,7 @@ export const RootLayout = (props: IRootLayoutProps) => {
         <TopBar />
         <div className='flex items-start h-[calc(100%-9rem)] mt-6 gap-6'>
           <SideBar />
-          <div className="h-full w-full overflow-auto">
+          <div className='h-full w-full overflow-auto text-black'>
             {props.children ?? <Outlet />}
           </div>
         </div>

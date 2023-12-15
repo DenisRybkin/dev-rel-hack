@@ -13,8 +13,9 @@ const pageTitles = {
   [RoutePaths[RouteKeys.COMMUNITIES]]: 'Сообщества',
   [RoutePaths[RouteKeys.MY_EVENTS]]: 'Мои события',
   [RoutePaths[RouteKeys.DEFERRED_EVENTS]]: 'Оложенные события',
-  [RoutePaths[RouteKeys.RECOMMENDATIONS]]: 'Рекомендации'
-}
+  [RoutePaths[RouteKeys.RECOMMENDATIONS]]: 'Рекомендации',
+  [RoutePaths[RouteKeys.MY_COMPANY]]: 'Моя компания',
+};
 
 export const MetaProvider = (props: IProviderProps) => {
   const { pathname } = useLocation();
@@ -22,7 +23,9 @@ export const MetaProvider = (props: IProviderProps) => {
 
   useEffect(() => {
     if (Object.keys(pageTitles).includes(pathname))
-      setTitle(Object.entries(pageTitles).find(item => item[0] == pathname)?.[1]);
+      setTitle(
+        Object.entries(pageTitles).find(item => item[0] == pathname)?.[1]
+      );
   }, [pathname]);
 
   return (

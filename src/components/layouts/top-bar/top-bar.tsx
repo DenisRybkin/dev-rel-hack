@@ -1,4 +1,4 @@
-import React, { Fragment, useContext, useState } from 'react';
+import { Fragment, useContext, useState } from 'react';
 import { Avatar, AvatarImage } from '@components/ui/avatar';
 import { FiBell } from 'react-icons/fi';
 import { Button } from '@components/ui/button';
@@ -11,8 +11,6 @@ export const TopBar = (props: ITopBarProps) => {
 
   const { title } = useContext(MetaContext);
 
-  console.log(title);
-
   return (
     <div className="w-full flex items-center gap-6">
       <div className="w-[438px] bg-white p-2 rounded-lg flex">
@@ -23,13 +21,13 @@ export const TopBar = (props: ITopBarProps) => {
           />
         </Avatar>
       </div>
-      <div className="flex-1 bg-white bg-white h-20 rounded-lg flex flex-col items-start justify-center py-6 px-7">
+      <div className="flex-1 bg-white h-20 rounded-lg text-black flex items-center px-6">
         {title && <h1 className="text-black text-base-semibold">{title}</h1>}
       </div>
       <div
         className={`w-[434px] ${
           isAuth ? 'bg-slate' : 'bg-white'
-        } rounded-lg p-2 flex justify-between`}
+        } rounded-lg px-6 flex justify-between py-2`}
       >
         {isAuth ? (
           <>
@@ -50,7 +48,7 @@ export const TopBar = (props: ITopBarProps) => {
             </div>
           </>
         ) : (
-          <div className="h-16 w-full flex items-center gap-5">
+          <div className="h-16 w-full flex items-center gap-x-5">
             <Button className="w-1/2">Вход</Button>
             <Button className="w-1/2" variant="primary">
               Регистрация
