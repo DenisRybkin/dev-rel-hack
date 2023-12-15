@@ -7,7 +7,7 @@ export type RoutePropsType = RouteProps & {
   requiredRole?: Role;
 };
 
-export const RoutePaths = {
+export const RoutePaths: Record<RouteKeys, string> = {
   [RouteKeys.BLOG]: '/',
   [RouteKeys.COMMUNITIES]: '/communities',
   [RouteKeys.DEFERRED_EVENTS]: '/deferred-events',

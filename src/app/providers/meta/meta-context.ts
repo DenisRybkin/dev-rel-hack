@@ -1,7 +1,7 @@
 import { createContext } from 'react';
 
 interface IMetaContext {
-  title: string;
+  title: string | undefined;
   setTitle: (title: string) => void;
 }
 
