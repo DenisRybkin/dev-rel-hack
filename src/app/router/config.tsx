@@ -3,6 +3,7 @@ import { Role } from '@lib/api/models';
 import { RouteKeys } from '@lib/constants';
 import BlogPage from '@components/pages/blog/blog-page';
 import CompanyPage from '@components/pages/company/company-page';
+import CommunityPage from '@components/pages/communities/community-page';
 
 export type RoutePropsType = RouteProps & {
   isPrivate: boolean;
@@ -33,7 +34,7 @@ export const routerConfig: RoutePropsType[] = [
   {
     isPrivate: false,
     path: RoutePaths[RouteKeys.COMMUNITIES],
-    element: <div></div>,
+    element: <CommunityPage/>,
   },
   {
     isPrivate: false,
