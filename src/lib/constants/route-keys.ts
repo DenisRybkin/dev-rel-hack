@@ -5,5 +5,5 @@ export enum RouteKeys {
   DEFERRED_EVENTS,
   COMMUNITIES,
   PARTNERSHIPS,
-  MYCOMPANY
+  MY_COMPANY,
 }

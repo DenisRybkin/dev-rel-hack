@@ -9,21 +9,21 @@ export type RoutePropsType = RouteProps & {
   requiredRole?: Role;
 };
 
-export const RoutePaths = {
+export const RoutePaths: Record<RouteKeys, string> = {
   [RouteKeys.BLOG]: '/',
   [RouteKeys.COMMUNITIES]: '/communities',
   [RouteKeys.DEFERRED_EVENTS]: '/deferred-events',
   [RouteKeys.MY_EVENTS]: '/my-events',
   [RouteKeys.PARTNERSHIPS]: '/partnerships',
   [RouteKeys.RECOMMENDATIONS]: '/recommendations',
-  [RouteKeys.MYCOMPANY]: '/my-company',
+  [RouteKeys.MY_COMPANY]: '/my-company',
 };
 
 export const routerConfig: RoutePropsType[] = [
   {
     isPrivate: false,
     path: RoutePaths[RouteKeys.BLOG],
-    element: <BlogPage/>,
+    element: <BlogPage />,
   },
   {
     isPrivate: false,
@@ -52,7 +52,7 @@ export const routerConfig: RoutePropsType[] = [
   },
   {
     isPrivate: false,
-    path: RoutePaths[RouteKeys.MYCOMPANY],
-    element: <CompanyPage/>,
-  }
+    path: RoutePaths[RouteKeys.MY_COMPANY],
+    element: <CompanyPage />,
+  },
 ];

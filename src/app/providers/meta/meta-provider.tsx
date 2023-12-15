@@ -7,23 +7,25 @@ import { useLocation } from 'react-router-dom';
 import { RouteKeys } from '@lib/constants';
 import { RoutePaths } from '@app/router';
 
-const routsWithDefaultTitle = [
-  RoutePaths[RouteKeys.BLOG],
-  RoutePaths[RouteKeys.PARTNERSHIPS],
-  RoutePaths[RouteKeys.COMMUNITIES],
-  RoutePaths[RouteKeys.MY_EVENTS],
-  RoutePaths[RouteKeys.DEFERRED_EVENTS],
-  RoutePaths[RouteKeys.RECOMMENDATIONS],
-  RoutePaths[RouteKeys.MYCOMPANY]
-];
+const pageTitles = {
+  [RoutePaths[RouteKeys.BLOG]]: 'Блог',
+  [RoutePaths[RouteKeys.PARTNERSHIPS]]: 'Партнёрство',
+  [RoutePaths[RouteKeys.COMMUNITIES]]: 'Сообщества',
+  [RoutePaths[RouteKeys.MY_EVENTS]]: 'Мои события',
+  [RoutePaths[RouteKeys.DEFERRED_EVENTS]]: 'Оложенные события',
+  [RoutePaths[RouteKeys.RECOMMENDATIONS]]: 'Рекомендации',
+  [RoutePaths[RouteKeys.MY_COMPANY]]: 'Моя компания',
+};
 
 export const MetaProvider = (props: IProviderProps) => {
   const { pathname } = useLocation();
-  const [title, setTitle] = useState<string>(import.meta.env.VITE_APP_TITLE);
+  const [title, setTitle] = useState<string | undefined>(undefined);
 
   useEffect(() => {
-    if (routsWithDefaultTitle.includes(pathname))
-      setTitle(import.meta.env.VITE_APP_TITLE);
+    if (Object.keys(pageTitles).includes(pathname))
+      setTitle(
+        Object.entries(pageTitles).find(item => item[0] == pathname)?.[1]
+      );
   }, [pathname]);
 
   return (
