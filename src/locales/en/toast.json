@@ -1,0 +1,41 @@
+{
+  "success_full": "SUCCESS",
+  "error_full": "ERROR",
+  "success": {
+    "auth_success": "Authorization was successful",
+    "registration_success": "Registration was successful",
+    "copied_clipboard": "Copied to clipboard: {{value}}",
+    "hashtag_created": "The hashtag was successfully created",
+    "article_created": "The article was successfully created",
+    "publisher_received": "Congratulations, you can now create articles!"
+  },
+  "error": {
+    "default": "Something went wrong...",
+    "small_article": "The article is too small",
+    "max_file_size": "The size of the {{name}} file exceeds {{size}} MB",
+    "api": {
+      "validation_error": "Validation error",
+      "internal_server_error": "Internal server error",
+      "conflict": "Conflict",
+      "unauthorized": "You are not logged in",
+      "forbidden": "You don't have enough rights",
+      "bad_request": "Bad request",
+      "not_found": "Resource not found",
+      "validation": {
+        "must_be_string": "must be string",
+        "must_be_email": "invalid email",
+        "must_be_number": "must be number",
+        "must_be_integer": "must be integer",
+        "must_be_enum": "must be enum",
+        "must_be_date": "must be date",
+        "must_be_boolean": "must be boolean",
+        "must_be_array": "must be array",
+        "must_be_int_array": "must be an array of integers",
+        "must_be_string_array": "must be an array of integers"
+      }
+    }
+  },
+  "info": {
+    "draft_saved": "Draft saved successfully!"
+  }
+}

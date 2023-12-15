@@ -1,0 +1,42 @@
+{
+  "info_fill": "ИНФО",
+  "success_full": "УСПЕШНО",
+  "error_full": "ОШИБКА",
+  "success": {
+    "auth_success": "Авторизация прошла успешно",
+    "registration_success": "Регистрация прошла успешно",
+    "copied_clipboard": "Скопировано в буфер обмена: {{value}}",
+    "hashtag_created": "Хэштэг был успешно создан",
+    "article_created": "Статья была успешно создана",
+    "publisher_received": "Поздравляю, вы теперь можете создавать публикации!"
+  },
+  "error": {
+    "default": "Что-то пошло не так...",
+    "small_article": "Слишком маленькая статья",
+    "max_file_size": "Размер файла {{name}} превышает {{size}} МБ",
+    "api": {
+      "validation_error": "Ошибка валидации",
+      "internal_server_error": "Внутреняя ошибка сервера",
+      "conflict": "Конфликт",
+      "unauthorized": "Вы не авторизованны",
+      "forbidden": "У вас недостаточно прав",
+      "bad_request": "Неправильный запрос",
+      "not_found": "Ресурс не найден",
+      "validation": {
+        "must_be_string": "должно быть строкой",
+        "must_be_email": "некоректная почта",
+        "must_be_number": "должно быть число",
+        "must_be_integer": "должно быть целочисленным",
+        "must_be_enum": "должно быть enum",
+        "must_be_date": "должно быть датой",
+        "must_be_boolean": "должно быть логическим",
+        "must_be_array": "должно быть массивом",
+        "must_be_int_array": "должно быть массивом целочисленных значений",
+        "must_be_string_array": "должно быть массивом строк"
+      }
+    }
+  },
+  "info": {
+    "draft_saved": "Черновик успешно сохранён!"
+  }
+}
