@@ -23,7 +23,7 @@ export const routerConfig: RoutePropsType[] = [
     element: <div></div>,
   },
   {
-    isPrivate: true,
+    isPrivate: false,
     path: RoutePaths[RouteKeys.MY_EVENTS],
     element: <div></div>,
   },
@@ -44,7 +44,7 @@ export const routerConfig: RoutePropsType[] = [
   },
   {
     isPrivate: false,
-    path: RoutePaths[RouteKeys.PARTNERSHIPS],
+    path: RoutePaths[RouteKeys.RECOMMENDATIONS],
     element: <div></div>,
   }
 ];
