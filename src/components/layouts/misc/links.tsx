@@ -14,7 +14,6 @@ export const sidebarLinks: ISidebarLink[] = [
   {
     route: RoutePaths[RouteKeys.RECOMMENDATIONS],
     label: 'Рекомендации',
-    isPrivate: true,
   },
   {
     route: RoutePaths[RouteKeys.MY_EVENTS],
