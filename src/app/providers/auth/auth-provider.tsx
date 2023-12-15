@@ -7,6 +7,7 @@ import { AuthContext } from '@app/providers/auth/auth-context';
 import { LocalStorageKeys, QueryKeys } from '@lib/constants';
 import { useQuery } from '@tanstack/react-query';
 import { AuthDialog } from '@components/entities/auth/dialogs';
+import { AuthStrategyType } from '@components/entities/auth/dialogs/auth-dialog';
 
 export const AuthProvider = (props: IProviderProps) => {
   const preloader = useContext(PreloaderContext);
@@ -16,6 +17,9 @@ export const AuthProvider = (props: IProviderProps) => {
     localStorage.getItem(LocalStorageKeys.JWT) ?? undefined
   );
   const [isOpenAuthDialog, setIsOpenAuthDialog] = useState<boolean>(false);
+  const [authDialogType, setAuthDialogType] = useState<
+    AuthStrategyType | undefined
+  >('login');
 
   const handleSuccess = (user: User) => setUser(user);
 
@@ -26,7 +30,7 @@ export const AuthProvider = (props: IProviderProps) => {
 
   const { isLoading, isFetching } = useQuery({
     queryKey: [QueryKeys.GET_ME],
-    queryFn: async () => await api.user.getMe(handleSuccess, handleError),
+    queryFn: async () => await api.account.getMe(handleSuccess, handleError),
     enabled: !user && !!accessToken,
     onSuccess: handleSuccess,
     onError: handleError,
@@ -44,7 +48,10 @@ export const AuthProvider = (props: IProviderProps) => {
     if (!token) localStorage.removeItem(LocalStorageKeys.JWT);
   };
 
-  const handleOpenAuthDialog = () => setIsOpenAuthDialog(true);
+  const handleOpenAuthDialog = (type?: AuthStrategyType) => {
+    if (type) setAuthDialogType(type);
+    setIsOpenAuthDialog(true);
+  };
 
   useEffect(() => {
     preloader.setVisible(isFetching);
@@ -65,7 +72,11 @@ export const AuthProvider = (props: IProviderProps) => {
       >
         <AuthDialog
           isOpen={isOpenAuthDialog}
-          onOpenChange={setIsOpenAuthDialog}
+          onOpenChange={open => {
+            if (!open) setAuthDialogType(undefined);
+            setIsOpenAuthDialog(open);
+          }}
+          strategy={authDialogType}
         />
         {props.children}
       </AuthContext.Provider>

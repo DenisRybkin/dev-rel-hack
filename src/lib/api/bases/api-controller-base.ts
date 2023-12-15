@@ -23,7 +23,7 @@ export abstract class ApiControllerBase<
   }
 
   protected url(next?: string): string {
-    return `api/${this.controllerName}` + (next ? `/${next}` : '');
+    return `${this.controllerName}` + (next ? `/${next}` : '');
   }
 
   protected async process<T>(

@@ -3,13 +3,15 @@
 /* tslint:disable */
 /* eslint-disable */
 
-export type RegisterDto = {
-    email: string;
-    password: string;
+export type UserModel = {
+    id: number;
     username: string;
     first_name: string;
     middle_name: string;
     last_name: string;
-    birthdate: string;
     city: string;
+    birthdate: string;
+    created_at: string;
+    account_id: number;
+    company_id: number;
 };

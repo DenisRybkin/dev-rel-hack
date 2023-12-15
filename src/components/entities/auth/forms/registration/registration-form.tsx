@@ -14,7 +14,6 @@ import {
   FormMessage,
 } from '@components/ui/form';
 import { Input } from '@components/ui/input';
-import { DialogFooter } from '@components/ui/dialog';
 import { Button } from '@components/ui/button';
 
 interface IRegistrationFormProps
@@ -26,29 +25,34 @@ export const RegistrationForm = (props: IRegistrationFormProps) => {
   const form = useForm<z.infer<typeof RegistrationSchema>>({
     resolver: zodResolver(RegistrationSchema),
     defaultValues: {
-      name: '',
-      nickname: '',
+      username: '',
+      first_name: '',
+      middle_name: '',
+      last_name: '',
+      city: '',
+      birthdate: new Date(),
       email: '',
       password: '',
       passwordConfirm: '',
     },
   });
 
-  const handleSubmit = async (fields: z.infer<typeof RegistrationSchema>) =>
+  const handleSubmit = async (fields: z.infer<typeof RegistrationSchema>) => {
     props.onSubmit(fields);
+  };
 
   return (
     <Form {...form}>
       <form
         onSubmit={form.handleSubmit(handleSubmit)}
-        className="flex flex-col justify-start gap-4"
+        className="flex flex-col justify-start gap-2 relative"
       >
         <FormField
           control={form.control}
-          name="name"
+          name="username"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>{t('ui:label.name')}</FormLabel>
+              <FormLabel>{t('ui:label.nickname')}</FormLabel>
               <FormControl>
                 <Input
                   placeholder={t('ui:placeholder.enter')}
@@ -62,10 +66,61 @@ export const RegistrationForm = (props: IRegistrationFormProps) => {
         />
         <FormField
           control={form.control}
-          name="nickname"
+          name="first_name"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>{t('ui:label.nickname')}</FormLabel>
+              <FormLabel>Имя</FormLabel>
+              <FormControl>
+                <Input
+                  placeholder={t('ui:placeholder.enter')}
+                  type="text"
+                  {...field}
+                />
+              </FormControl>
+              <FormMessage number={3} />
+            </FormItem>
+          )}
+        />
+        <FormField
+          control={form.control}
+          name="middle_name"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Отчество</FormLabel>
+              <FormControl>
+                <Input
+                  placeholder={t('ui:placeholder.enter')}
+                  type="text"
+                  {...field}
+                />
+              </FormControl>
+              <FormMessage number={3} />
+            </FormItem>
+          )}
+        />
+        <FormField
+          control={form.control}
+          name="last_name"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Фамилия</FormLabel>
+              <FormControl>
+                <Input
+                  placeholder={t('ui:placeholder.enter')}
+                  type="text"
+                  {...field}
+                />
+              </FormControl>
+              <FormMessage number={3} />
+            </FormItem>
+          )}
+        />
+        <FormField
+          control={form.control}
+          name="city"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Город</FormLabel>
               <FormControl>
                 <Input
                   placeholder={t('ui:placeholder.enter')}
@@ -94,6 +149,48 @@ export const RegistrationForm = (props: IRegistrationFormProps) => {
             </FormItem>
           )}
         />
+        {/*<FormField*/}
+        {/*  control={form.control}*/}
+        {/*  name="birthdate"*/}
+        {/*  render={({ field }) => (*/}
+        {/*    <FormItem className="flex flex-col">*/}
+        {/*      <FormLabel>Дата рождения</FormLabel>*/}
+        {/*      <Popover>*/}
+        {/*        <PopoverTrigger asChild>*/}
+        {/*          <FormControl>*/}
+        {/*            <Button*/}
+        {/*              variant={'outline'}*/}
+        {/*              className={cn(*/}
+        {/*                'w-[240px] pl-3 text-left font-normal text-black w-full',*/}
+        {/*                !field.value && 'text-muted-foreground'*/}
+        {/*              )}*/}
+        {/*            >*/}
+        {/*              {field.value ? (*/}
+        {/*                format(field.value, 'PPP')*/}
+        {/*              ) : (*/}
+        {/*                <span className="text-black">Pick a date</span>*/}
+        {/*              )}*/}
+        {/*              <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />*/}
+        {/*            </Button>*/}
+        {/*          </FormControl>*/}
+        {/*        </PopoverTrigger>*/}
+        {/*        <PopoverContent className="w-auto p-0" align="start">*/}
+        {/*          <Calendar*/}
+        {/*            react-day-picker*/}
+        {/*            mode="single"*/}
+        {/*            selected={field.value}*/}
+        {/*            onSelect={field.onChange}*/}
+        {/*            disabled={date =>*/}
+        {/*              date > new Date() || date < new Date('1930-01-01')*/}
+        {/*            }*/}
+        {/*            className="w-full"*/}
+        {/*          />*/}
+        {/*        </PopoverContent>*/}
+        {/*      </Popover>*/}
+        {/*      <FormMessage />*/}
+        {/*    </FormItem>*/}
+        {/*  )}*/}
+        {/*/>*/}
         <FormField
           control={form.control}
           name="password"
@@ -129,16 +226,15 @@ export const RegistrationForm = (props: IRegistrationFormProps) => {
           )}
         />
         {props.extraFromContent}
-        <DialogFooter>
-          <Button
-            data={{ isLoading: props.isLoading }}
-            className="mt-5"
-            variant="primary"
-            type="submit"
-          >
-            {t('ui:button.sign_up')}
-          </Button>
-        </DialogFooter>
+        <Button
+          data={{ isLoading: props.isLoading }}
+          className="mt-5"
+          //onClick={handleSubmit}
+          variant="primary"
+          type="submit"
+        >
+          {t('ui:button.sign_up')}
+        </Button>
       </form>
     </Form>
   );

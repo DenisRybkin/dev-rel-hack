@@ -7,6 +7,7 @@ import {
   LoginDto,
   LoginResponseType,
 } from '@lib/api/models';
+import { RegisterDto, TokenDto } from '@lib/api/models2';
 
 export class AuthController extends ApiControllerBase {
   constructor(client: AxiosInstance, locker: LockerModel) {
@@ -27,11 +28,11 @@ export class AuthController extends ApiControllerBase {
 
   async login(
     dto: LoginDto,
-    onSuccess?: (model: LoginResponseType) => void,
+    onSuccess?: (model: TokenDto) => void,
     onError?: (error: BaseProcessedError) => void
-  ): Promise<LoginResponseType> {
+  ): Promise<TokenDto> {
     return await this.process(
-      this.post<LoginResponseType>('login', { data: dto }),
+      this.post<TokenDto>('login', { data: dto }),
       onSuccess,
       onError
     );
@@ -45,12 +46,12 @@ export class AuthController extends ApiControllerBase {
   }
 
   async registration(
-    dto: CreateUserDto,
-    onSuccess?: (model: LoginResponseType) => void,
+    dto: RegisterDto,
+    onSuccess?: (model: TokenDto) => void,
     onError?: (error: BaseProcessedError) => void
-  ): Promise<LoginResponseType> {
+  ): Promise<TokenDto> {
     return await this.process(
-      this.post('registration', { data: dto }),
+      this.post('register', { data: dto }),
       onSuccess,
       onError
     );

@@ -74,16 +74,15 @@ export const LoginForm = (props: ILoginFormProps) => {
           )}
         />
         {props.extraFromContent}
-        <DialogFooter>
-          <Button
-            data={{ isLoading: props.isLoading }}
-            className="mt-5"
-            variant="primary"
-            type="submit"
-          >
-            {t('ui:button.sign_in')}
-          </Button>
-        </DialogFooter>
+
+        <Button
+          data={{ isLoading: props.isLoading }}
+          className="mt-5"
+          variant="primary"
+          type="submit"
+        >
+          {t('ui:button.sign_in')}
+        </Button>
       </form>
     </Form>
   );

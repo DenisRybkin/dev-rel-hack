@@ -8,7 +8,7 @@
     "build": "tsc && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "gen-models-local": "openapi --input http://vpive.ru/swagger/documentName/swagger.json --output src/lib/api/models2 --exportServices false --exportCore false"
+    "gen-models-local": "openapi --input https://vpive.ru/swagger-spec.json --output src/lib/api/models2 --exportServices false --exportCore false"
   },
   "dependencies": {
     "@codexteam/icons": "^0.3.0",
@@ -42,6 +42,7 @@
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
     "cmdk": "^0.2.0",
+    "date-fns": "^2.30.0",
     "i": "^0.3.7",
     "i18next": "^23.5.1",
     "i18next-browser-languagedetector": "^7.1.0",
@@ -50,6 +51,7 @@
     "lucide-react": "^0.279.0",
     "npm": "^10.1.0",
     "react": "^18.2.0",
+    "react-day-picker": "^8.9.1",
     "react-dom": "^18.2.0",
     "react-editor-js": "^2.1.0",
     "react-helmet": "^6.1.0",

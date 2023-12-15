@@ -2,11 +2,19 @@ import * as z from 'zod';
 
 export const RegistrationSchema = z
   .object({
-    nickname: z
+    username: z
       .string()
       .nonempty('validation:error.field_required')
       .min(3, 'validation:error.min_char_number'),
-    name: z
+    first_name: z
+      .string()
+      .nonempty('validation:error.field_required')
+      .min(3, 'validation:error.min_char_number'),
+    middle_name: z
+      .string()
+      .nonempty('validation:error.field_required')
+      .min(3, 'validation:error.min_char_number'),
+    last_name: z
       .string()
       .nonempty('validation:error.field_required')
       .min(3, 'validation:error.min_char_number'),
@@ -19,6 +27,13 @@ export const RegistrationSchema = z
       .string()
       .nonempty('validation:error.field_required')
       .min(6, 'validation:error.min_char_number'),
+    city: z
+      .string()
+      .nonempty('validation:error.field_required')
+      .min(3, 'validation:error.min_char_number'),
+    birthdate: z.date({
+      required_error: 'Дата рождения обязательная',
+    }),
     passwordConfirm: z
       .string()
       .nonempty('validation:error.field_required')

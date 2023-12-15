@@ -2,7 +2,7 @@ import type { IBaseDialogProps } from '@components/shared/dialog';
 import { DialogAdapter } from '@components/shared/dialog';
 import { LoginForm, RegistrationForm } from '@components/entities/auth/forms';
 
-import Logo from '@assets/icons/favicon.svg';
+import Logo from '@assets/images/logo-light.png';
 import { useContext, useEffect, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { z } from 'zod';
@@ -17,8 +17,9 @@ import { api } from '@lib/api/plugins';
 import { BaseProcessedError, LoginResponseType } from '@lib/api/models';
 import { LocalStorageKeys } from '@lib/constants';
 import { AuthContext } from '@app/providers/auth';
+import { TokenDto } from '@lib/api/models2';
 
-type AuthStrategyType = 'login' | 'registration';
+export type AuthStrategyType = 'login' | 'registration';
 
 interface IAuthDialogProps extends IBaseDialogProps {
   strategy?: AuthStrategyType;
@@ -34,10 +35,10 @@ export const AuthDialog = (props: IAuthDialogProps) => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [isWrongCredentials, setIsWrongCredentials] = useState<boolean>(false);
 
-  const handleLoginSuccess = (response: LoginResponseType) => {
-    authContext.setUser(response.user);
-    authContext.setAccessToken(response.access);
-    localStorage.setItem(LocalStorageKeys.JWT, response.access);
+  const handleLoginSuccess = (response: TokenDto) => {
+    authContext.setUser(response);
+    authContext.setAccessToken(response.token);
+    localStorage.setItem(LocalStorageKeys.JWT, response.token);
     toast({
       variant: 'success',
       title: t('toast:success.auth_success'),
@@ -45,10 +46,10 @@ export const AuthDialog = (props: IAuthDialogProps) => {
     handleOpenChange(false);
   };
 
-  const handleRegistrationSuccess = (response: LoginResponseType) => {
-    authContext.setUser(response.user);
-    authContext.setAccessToken(response.access);
-    localStorage.setItem(LocalStorageKeys.JWT, response.access);
+  const handleRegistrationSuccess = (response: TokenDto) => {
+    authContext.setUser(response);
+    authContext.setAccessToken(response.token);
+    localStorage.setItem(LocalStorageKeys.JWT, response.token);
     toast({
       variant: 'success',
       title: t('toast:success.registration_success'),
@@ -78,7 +79,7 @@ export const AuthDialog = (props: IAuthDialogProps) => {
   ) => {
     setIsLoading(true);
     await api.auth.registration(
-      dto,
+      { ...dto, birthdate: dto.birthdate.toISOString() },
       handleRegistrationSuccess,
       handleAuthError
     );
@@ -100,6 +101,10 @@ export const AuthDialog = (props: IAuthDialogProps) => {
   useEffect(() => {
     return () => setIsLoading(false);
   }, []);
+
+  useEffect(() => {
+    props.strategy && setAuthStrategy(props.strategy);
+  }, [props.strategy]);
 
   const handleOpenChange = (open: boolean) => {
     if (open) setIsLoading(false);

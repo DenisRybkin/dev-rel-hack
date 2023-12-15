@@ -3,9 +3,8 @@
 /* tslint:disable */
 /* eslint-disable */
 
-export type UserDataDto = {
-    id?: number;
-    email?: string | null;
-    username?: string | null;
-    role?: string | null;
+export type TokenPayloadModel = {
+    id: number;
+    email: string;
+    role: string;
 };

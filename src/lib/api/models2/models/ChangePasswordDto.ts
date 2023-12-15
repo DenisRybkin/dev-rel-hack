@@ -3,7 +3,6 @@
 /* tslint:disable */
 /* eslint-disable */
 
-export type LoginDto = {
-    email: string;
+export type ChangePasswordDto = {
     password: string;
 };
