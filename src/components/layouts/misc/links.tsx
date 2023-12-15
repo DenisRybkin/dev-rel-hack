@@ -27,4 +27,8 @@ export const sidebarLinks: ISidebarLink[] = [
     route: RoutePaths[RouteKeys.PARTNERSHIPS],
     label: 'Стать партнером',
   },
+  {
+    route: RoutePaths[RouteKeys.MYCOMPANY],
+    label: 'Моя компания',
+  },
 ];

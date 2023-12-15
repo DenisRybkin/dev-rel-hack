@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from 'react';
+import React, { useState } from 'react';
 import { Avatar, AvatarImage } from '@components/ui/avatar';
 import { FiBell } from 'react-icons/fi';
 import { Button } from '@components/ui/button';
@@ -9,7 +9,7 @@ interface ITopBarProps {
 
 export const TopBar = (props: ITopBarProps) => {
 
-  const [isAuth, setIsAuth] = useState(false);
+  const [isAuth, setIsAuth] = useState<Boolean>(false);
 
   return (
     <div className="w-full flex items-center gap-6">
@@ -18,8 +18,10 @@ export const TopBar = (props: ITopBarProps) => {
           <AvatarImage className="rounded-lg h-16 w-16 " src="https://static7.tgstat.ru/channels/_0/d6/d659efd2ce0239a71b64ae9e408dff1c.jpg" />
         </Avatar>
       </div>
-      <div className='flex-1 bg-white bg-white h-20 rounded-lg'></div>
-      <div className={`w-[434px] ${isAuth ? 'bg-slate' : 'bg-white'} rounded-lg p-2 flex justify-between`}>
+      <div className='flex-1 bg-white h-20 rounded-lg text-black flex items-center px-6'>
+        Блог
+      </div>
+      <div className={`w-[434px] ${isAuth ? 'bg-slate' : 'bg-white'} rounded-lg px-6 flex justify-between py-2`}>
         {isAuth ? <>
           <div className='h-16 w-16 bg-white rounded-lg flex items-center justify-center'>
             <FiBell color="black" size={24} />
@@ -33,7 +35,7 @@ export const TopBar = (props: ITopBarProps) => {
               <AvatarImage className="rounded-lg h-16 w-16 " src="https://avatars.mds.yandex.net/i?id=de0498177b5eeeddfd228406bcfbb9a8d020384e-10932700-images-thumbs&n=13" />
             </Avatar>
           </div>
-        </> : <div className='h-16 w-full flex items-center gap-5'>
+        </> : <div className='h-16 w-full flex items-center gap-x-5'>
           <Button className='w-1/2'>Вход</Button>
           <Button className='w-1/2' variant='primary'>Регистрация</Button>
         </div>}

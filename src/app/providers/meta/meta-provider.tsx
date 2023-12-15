@@ -13,7 +13,8 @@ const routsWithDefaultTitle = [
   RoutePaths[RouteKeys.COMMUNITIES],
   RoutePaths[RouteKeys.MY_EVENTS],
   RoutePaths[RouteKeys.DEFERRED_EVENTS],
-  RoutePaths[RouteKeys.RECOMMENDATIONS]
+  RoutePaths[RouteKeys.RECOMMENDATIONS],
+  RoutePaths[RouteKeys.MYCOMPANY]
 ];
 
 export const MetaProvider = (props: IProviderProps) => {
