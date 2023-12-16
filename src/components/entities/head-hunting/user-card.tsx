@@ -50,6 +50,7 @@ const UserCard = () => {
           </div>
         </div>
         <div className="flex items-center gap-x-2">
+
         <TbBrandTelegram />
           <div className="text-blue text-[14px] font-medium">@telegrammer</div>
         </div>

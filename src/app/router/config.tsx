@@ -4,8 +4,10 @@ import { RouteKeys } from '@lib/constants';
 import MyEventsPage from '@components/pages/my-events/my-events-page';
 import CompanyPage from '@components/pages/company/company-page';
 import CommunityPage from '@components/pages/communities/community-page';
+import LkPage from '@/components/pages/lk/lk-page';
 import HeadHuntingPage from '@/components/pages/head-hunting/head-hunting-page';
 import { EventPage } from '@/components/pages/event/event-page';
+
 
 export type RoutePropsType = RouteProps & {
   isPrivate: boolean;
@@ -20,6 +22,7 @@ export const RoutePaths: Record<RouteKeys, string> = {
   [RouteKeys.PARTNERSHIPS]: '/partnerships',
   [RouteKeys.RECOMMENDATIONS]: '/recommendations',
   [RouteKeys.MY_COMPANY]: '/my-company',
+  [RouteKeys.LK]: '/lk',
   [RouteKeys.HEAD_HUNTING]: '/head-hunting',
   [RouteKeys.EVENT]: '/event',
 };
@@ -62,9 +65,17 @@ export const routerConfig: RoutePropsType[] = [
   },
   {
     isPrivate: false,
+
+    path: RoutePaths[RouteKeys.LK],
+    element: <LkPage />,
+  },
+  
+
     path: RoutePaths[RouteKeys.HEAD_HUNTING],
     element: <HeadHuntingPage />,
     path: RoutePaths[RouteKeys.EVENT],
     element: <EventPage />,
   },
+
 ];
+

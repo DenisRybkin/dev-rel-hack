@@ -15,6 +15,7 @@ const pageTitles = {
   [RoutePaths[RouteKeys.DEFERRED_EVENTS]]: 'Оложенные события',
   [RoutePaths[RouteKeys.RECOMMENDATIONS]]: 'Рекомендации',
   [RoutePaths[RouteKeys.MY_COMPANY]]: 'Моя компания',
+  [RoutePaths[RouteKeys.LK]]: 'Мой профиль',
   [RoutePaths[RouteKeys.HEAD_HUNTING]]: 'Хед Хантинг',
   [RoutePaths[RouteKeys.EVENT]]: 'Ивент'
 };
