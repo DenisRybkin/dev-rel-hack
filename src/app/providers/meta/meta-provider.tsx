@@ -16,6 +16,7 @@ const pageTitles = {
   [RoutePaths[RouteKeys.RECOMMENDATIONS]]: 'Рекомендации',
   [RoutePaths[RouteKeys.MY_COMPANY]]: 'Моя компания',
   [RoutePaths[RouteKeys.HEAD_HUNTING]]: 'Хед Хантинг',
+  [RoutePaths[RouteKeys.EVENT]]: 'Ивент'
 };
 
 export const MetaProvider = (props: IProviderProps) => {

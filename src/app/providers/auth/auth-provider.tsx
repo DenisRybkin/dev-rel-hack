@@ -70,7 +70,7 @@ export const AuthProvider = (props: IProviderProps) => {
           setAccessToken: handleSetAccessToken,
           openAuthDialog: handleOpenAuthDialog,
         }}
-      >
+      > 
         <AuthDialog
           isOpen={isOpenAuthDialog}
           onOpenChange={open => {
