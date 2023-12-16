@@ -14,7 +14,6 @@ import {
 } from '@components/ui/form';
 import { useTranslation } from 'react-i18next';
 import { Input } from '@components/ui/input';
-import { DialogFooter } from '@components/ui/dialog';
 import { Button } from '@components/ui/button';
 
 interface ILoginFormProps extends IAuthFormProps<z.infer<typeof LoginSchema>> {}

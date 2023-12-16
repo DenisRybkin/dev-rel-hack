@@ -1,14 +1,14 @@
 import React from 'react';
-import CommunityCard from '@components/entities/community-card/community-card';
+import CommunityCard from '@components/entities/community/community-card/community-card';
 
 const CommunityPage = () => {
   return (
-    <div className='w-full flex flex-wrap gap-4'>
-      <CommunityCard/>
-      <CommunityCard/>
-      <CommunityCard/>
-      <CommunityCard/>
-      <CommunityCard/>
+    <div className="w-full flex flex-wrap gap-4">
+      <CommunityCard />
+      <CommunityCard />
+      <CommunityCard />
+      <CommunityCard />
+      <CommunityCard />
     </div>
   );
 };

@@ -3,7 +3,6 @@ import { AxiosInstance } from 'axios';
 import { LockerModel } from '@/lib/api/types';
 import {
   BaseProcessedError,
-  CreateUserDto,
   LoginDto,
   LoginResponseType,
 } from '@lib/api/models';

@@ -11,13 +11,14 @@ import { useTranslation } from 'react-i18next';
 import { api } from '@lib/api/plugins';
 import { BaseProcessedError, StaticField } from '@lib/api/models';
 import { useControllableState } from '@lib/utils/hooks';
+import { ImageModel } from '@lib/api/models2';
 
 interface IFileUploaderButtonProps {
   children: ReactNode;
   accept?: string;
   maxSizeMb?: number;
   formDataName?: string;
-  onSuccess?: (model: StaticField) => void;
+  onSuccess?: (model: ImageModel) => void;
   onError?: (error: BaseProcessedError) => void;
   isUploading?: boolean;
   setIsUploading?: Dispatch<SetStateAction<boolean>>;
@@ -41,8 +42,8 @@ export const FileUploader = (props: IFileUploaderButtonProps) => {
   const uploadFile = async (file: File) => {
     setIsUploading(true);
     const formData = new FormData();
-    formData.append('image', file, file.name);
-    await api.staticField.upload(
+    formData.append(props.formDataName ?? 'image', file, file.name);
+    await api.file.upload(
       formData,
       props.onSuccess,
       props.onError ?? handleError

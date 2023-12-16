@@ -3,9 +3,11 @@
 /* tslint:disable */
 /* eslint-disable */
 
-export type CompanyCreateDto = {
+export type FileUploadedDto = {
+    id: number;
     title: string;
-    description: string;
-    city: string;
-    avatar_id: number;
+    type: string;
+    uploaded: boolean;
+    size: number;
+    url: string;
 };

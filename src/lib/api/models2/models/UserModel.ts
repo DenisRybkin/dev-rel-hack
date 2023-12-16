@@ -4,6 +4,7 @@
 /* eslint-disable */
 
 export type UserModel = {
+    avatar_id: number;
     id: number;
     username: string;
     first_name: string;

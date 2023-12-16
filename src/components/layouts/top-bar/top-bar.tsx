@@ -15,7 +15,7 @@ export const TopBar = (props: ITopBarProps) => {
   return (
     <>
       <div className="w-full flex items-center gap-6">
-        <div className="w-[438px] h-16 bg-white p-2 rounded-lg flex">
+        <div className="w-[438px] h-20 bg-white p-6 rounded-lg flex">
           <img src={Logo} alt="" />
         </div>
         <div className="flex-1 bg-white h-20 rounded-lg text-black flex items-center px-6">
@@ -23,8 +23,8 @@ export const TopBar = (props: ITopBarProps) => {
         </div>
         <div
           className={`w-[434px] ${
-            authContext.isAuth ? 'bg-slate' : 'bg-white'
-          } rounded-lg px-6 flex justify-between py-2`}
+            authContext.isAuth ? 'bg-slate px-2' : 'bg-white px-5'
+          } rounded-lg  flex justify-between py-2`}
         >
           {authContext.isAuth ? (
             <>

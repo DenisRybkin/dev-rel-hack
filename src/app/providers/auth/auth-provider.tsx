@@ -8,11 +8,12 @@ import { LocalStorageKeys, QueryKeys } from '@lib/constants';
 import { useQuery } from '@tanstack/react-query';
 import { AuthDialog } from '@components/entities/auth/dialogs';
 import { AuthStrategyType } from '@components/entities/auth/dialogs/auth-dialog';
+import { TokenDto } from '@lib/api/models2';
 
 export const AuthProvider = (props: IProviderProps) => {
   const preloader = useContext(PreloaderContext);
 
-  const [user, setUser] = useState<User | undefined>(undefined);
+  const [user, setUser] = useState<TokenDto | undefined>(undefined);
   const [accessToken, setAccessToken] = useState<string | undefined>(
     localStorage.getItem(LocalStorageKeys.JWT) ?? undefined
   );
@@ -21,7 +22,7 @@ export const AuthProvider = (props: IProviderProps) => {
     AuthStrategyType | undefined
   >('login');
 
-  const handleSuccess = (user: User) => setUser(user);
+  const handleSuccess = (user: TokenDto) => setUser(user);
 
   const handleError = () => {
     localStorage.removeItem(LocalStorageKeys.JWT);
@@ -29,12 +30,12 @@ export const AuthProvider = (props: IProviderProps) => {
   };
 
   const { isLoading, isFetching } = useQuery({
-    queryKey: [QueryKeys.GET_ME],
     queryFn: async () => await api.account.getMe(handleSuccess, handleError),
     enabled: !user && !!accessToken,
     onSuccess: handleSuccess,
-    onError: handleError,
   });
+
+  console.log(!user && !!accessToken);
 
   const isAuth = useMemo(
     () =>
@@ -42,7 +43,7 @@ export const AuthProvider = (props: IProviderProps) => {
     [accessToken, user]
   );
 
-  const role = useMemo(() => user?.role, [user]);
+  const role = useMemo(() => undefined, [user]);
   const handleSetAccessToken = (token?: string) => {
     setAccessToken(token);
     if (!token) localStorage.removeItem(LocalStorageKeys.JWT);

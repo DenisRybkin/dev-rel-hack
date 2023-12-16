@@ -3,5 +3,10 @@
 /* tslint:disable */
 /* eslint-disable */
 
-export type CompanyInviteDto = {
+export type ImageModel = {
+    id: number;
+    title: string;
+    type: string;
+    url: string;
+    size: number;
 };

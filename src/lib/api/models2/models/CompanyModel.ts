@@ -3,7 +3,11 @@
 /* tslint:disable */
 /* eslint-disable */
 
+import type { ImageModel } from './ImageModel';
+
 export type CompanyModel = {
+    avatar: ImageModel;
+    avatar_id: number;
     id: number;
     title: string;
     description: string;

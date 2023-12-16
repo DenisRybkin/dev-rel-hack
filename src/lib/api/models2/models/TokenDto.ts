@@ -4,6 +4,7 @@
 /* eslint-disable */
 
 export type TokenDto = {
+    avatar_id: number;
     id: number;
     username: string;
     first_name: string;

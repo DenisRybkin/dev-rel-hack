@@ -5,11 +5,11 @@ import EventCard from '@components/entities/company/company-events/event-card';
 const BlogPage = () => {
   return (
     <div>
-      <FiltersBlock/>
-      <div className='mt-6'>
-        <EventCard className='mb-[72px]'/>
-        <EventCard className='mb-[72px]'/>
-        <EventCard className='mb-[72px]'/>
+      <FiltersBlock />
+      <div className="flex flex-col mt-6 space-y-16">
+        <EventCard />
+        <EventCard />
+        <EventCard />
       </div>
     </div>
   );
