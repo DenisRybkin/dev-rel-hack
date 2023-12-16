@@ -2,7 +2,7 @@ import React from 'react';
 import FiltersBlock from '@components/entities/blog/filters-block';
 import EventCard from '@components/entities/company/company-events/event-card';
 
-const BlogPage = () => {
+const MyEventsPage = () => {
   return (
     <div>
       <FiltersBlock />
@@ -15,4 +15,4 @@ const BlogPage = () => {
   );
 };
 
-export default BlogPage;
+export default MyEventsPage;

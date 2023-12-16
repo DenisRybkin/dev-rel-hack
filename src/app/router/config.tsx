@@ -1,7 +1,7 @@
 import { RouteProps } from 'react-router-dom';
 import { Role } from '@lib/api/models';
 import { RouteKeys } from '@lib/constants';
-import BlogPage from '@components/pages/blog/blog-page';
+import MyEventsPage from '@components/pages/my-events/my-events-page';
 import CompanyPage from '@components/pages/company/company-page';
 import CommunityPage from '@components/pages/communities/community-page';
 
@@ -24,12 +24,12 @@ export const routerConfig: RoutePropsType[] = [
   {
     isPrivate: false,
     path: RoutePaths[RouteKeys.BLOG],
-    element: <BlogPage />,
+    element: <div></div>,
   },
   {
     isPrivate: false,
     path: RoutePaths[RouteKeys.MY_EVENTS],
-    element: <div></div>,
+    element: <MyEventsPage/>,
   },
   {
     isPrivate: false,
