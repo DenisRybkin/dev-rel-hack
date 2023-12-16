@@ -31,4 +31,8 @@ export const sidebarLinks: ISidebarLink[] = [
     route: RoutePaths[RouteKeys.MY_COMPANY],
     label: 'Моя компания',
   },
+  {
+    route: RoutePaths[RouteKeys.HEAD_HUNTING],
+    label: 'Хед хантинг',
+  },
 ];
