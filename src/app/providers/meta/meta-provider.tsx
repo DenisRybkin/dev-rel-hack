@@ -15,6 +15,7 @@ const pageTitles = {
   [RoutePaths[RouteKeys.DEFERRED_EVENTS]]: 'Оложенные события',
   [RoutePaths[RouteKeys.RECOMMENDATIONS]]: 'Рекомендации',
   [RoutePaths[RouteKeys.MY_COMPANY]]: 'Моя компания',
+  [RoutePaths[RouteKeys.EVENT]]: 'Ивент',
 };
 
 export const MetaProvider = (props: IProviderProps) => {
