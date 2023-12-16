@@ -20,7 +20,7 @@ const UserCard = () => {
             Добрый день, я senior дизайнер...
           </div>
           <div className="flex items-center gap-x-2">
-            <FaGitAlt size={24} color="orange" />
+            <FaGitAlt size={24} color="#F26357" />
             <div className="text-gray text-[14px] font-normal">
               Повышенное доверие
             </div>
