@@ -8,7 +8,6 @@ import LkPage from '@/components/pages/lk/lk-page';
 import HeadHuntingPage from '@/components/pages/head-hunting/head-hunting-page';
 import { EventPage } from '@/components/pages/event/event-page';
 
-
 export type RoutePropsType = RouteProps & {
   isPrivate: boolean;
   requiredRole?: Role;
@@ -36,12 +35,12 @@ export const routerConfig: RoutePropsType[] = [
   {
     isPrivate: false,
     path: RoutePaths[RouteKeys.MY_EVENTS],
-    element: <MyEventsPage/>,
+    element: <MyEventsPage />,
   },
   {
     isPrivate: false,
     path: RoutePaths[RouteKeys.COMMUNITIES],
-    element: <CommunityPage/>,
+    element: <CommunityPage />,
   },
   {
     isPrivate: false,
@@ -65,17 +64,18 @@ export const routerConfig: RoutePropsType[] = [
   },
   {
     isPrivate: false,
-
     path: RoutePaths[RouteKeys.LK],
     element: <LkPage />,
   },
-  
 
+  {
+    isPrivate: false,
     path: RoutePaths[RouteKeys.HEAD_HUNTING],
     element: <HeadHuntingPage />,
+  },
+  {
+    isPrivate: false,
     path: RoutePaths[RouteKeys.EVENT],
     element: <EventPage />,
   },
-
 ];
-
