@@ -6,5 +6,7 @@ export enum RouteKeys {
   COMMUNITIES,
   PARTNERSHIPS,
   MY_COMPANY,
-  LK
+  LK,
+  HEAD_HUNTING,
+  EVENT
 }

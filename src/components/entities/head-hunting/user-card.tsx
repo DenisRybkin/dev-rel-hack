@@ -1,6 +1,6 @@
 import { Avatar, AvatarFallback, AvatarImage } from '@components/ui/avatar';
 import { FiPhone } from 'react-icons/fi';
-import { TbBrandTelegram } from 'react-icons/tb';
+import { TbBrandTelegram } from "react-icons/tb";
 import { FaGitAlt } from 'react-icons/fa6';
 import { Button } from '@components/ui/button';
 
@@ -50,7 +50,8 @@ const UserCard = () => {
           </div>
         </div>
         <div className="flex items-center gap-x-2">
-          <TbBrandTelegram />
+
+        <TbBrandTelegram />
           <div className="text-blue text-[14px] font-medium">@telegrammer</div>
         </div>
       </div>
