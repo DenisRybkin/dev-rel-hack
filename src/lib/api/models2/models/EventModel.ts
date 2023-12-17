@@ -1,4 +1,4 @@
-import {Banner} from './BunnerModel'
+import {Banner} from './BannerModel'
 
 export type EventModel = {
   status?: string;
