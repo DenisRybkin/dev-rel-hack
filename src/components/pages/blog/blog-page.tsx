@@ -20,6 +20,8 @@ export const BlogPage = () => {
     console.log(newEvents)
     setEvents(newEvents);
   }
+
+
   return (
     <div>
       <FiltersBlock/>

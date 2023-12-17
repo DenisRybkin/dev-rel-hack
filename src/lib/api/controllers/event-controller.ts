@@ -45,10 +45,4 @@ export class EventController extends ApiControllerBase {
     return await this.process(this.get(`${id}/join`), onSuccess, onError);
   }
 
-  async own(
-    onSuccess?: (model: CompanyModel) => void,
-    onError?: (error: BaseProcessedError) => void
-  ) {
-    return await this.process(this.get('own'), onSuccess, onError);
-  }
 }

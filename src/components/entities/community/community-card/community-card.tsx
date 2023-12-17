@@ -3,18 +3,26 @@ import { Avatar, AvatarFallback, AvatarImage } from '@components/ui/avatar';
 import { FiAward, FiUsers } from 'react-icons/fi';
 import { Button } from '@components/ui/button';
 
-const CommunityCard = () => {
+interface ICommunityCardProps {
+  className?: string;
+  title?:string;
+  url?:string;
+  onClick?:()=>void
+}
+
+const CommunityCard = ({title='',url=''}:ICommunityCardProps) => {
+  
   return (
       <div className='h-[240px] w-[31%] bg-white rounded-lg p-6'>
         <div className='flex items-center gap-x-4'>
           <Avatar className="h-[106px] w-[106px] rounded-lg">
-            <AvatarImage />
+            <AvatarImage src={url}/>
             <AvatarFallback>
               <div className="w-full h-full bg-emerald-500"></div>
             </AvatarFallback>
           </Avatar>
           <div>
-            <div className='text-[25px] font-semibold'>Open Solutions</div>
+            <div className='text-[25px] font-semibold'>{title}</div>
             <div className='text-[12px] font-normal'>Наша команда обладает большим опытом в разработке комплексных решений, включая Web и т.д.</div>
           </div>
         </div>

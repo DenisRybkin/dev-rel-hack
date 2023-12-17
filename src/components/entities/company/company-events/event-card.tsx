@@ -6,18 +6,31 @@ import { FiHeart } from 'react-icons/fi';
 
 interface IEventCardProps {
   className?: string;
-  title?:string;
-  onClick?:()=>void
+  title?: string;
+  url?: string;
+  onClick?: () => void;
 }
 
-const EventCard = ({ className,title="DevRel",onClick  }: IEventCardProps) => {
+const EventCard = ({
+  className,
+  title = 'DevRel',
+  url = 'http://negr.hb.ru-msk.vkcs.cloud/a868a787d12fedc15d3ef72bab0a9323',
+  onClick,
+}: IEventCardProps) => {
   return (
-    <div className={cn('w-full h-[289px] gap-x-6 flex items-start', className)} onClick={onClick}>
-      <div className="w-1/2 h-full bg-emerald-500 min-w-[50%] relative rounded-lg">
+    <div
+      className={cn('w-full h-[289px] gap-x-6 flex items-start', className)}
+      onClick={onClick}
+    >
+      <Avatar className="h-[289px] w-[592px] rounded-lg">
+        <AvatarImage src={url} />
+        <AvatarFallback>
+          <div className="w-full h-full bg-emerald-500"></div>
+        </AvatarFallback>
         <div className="w-12 h-12 bg-white flex items-center justify-center rounded absolute right-2 top-2">
           <FiHeart size={24} />
         </div>
-      </div>
+      </Avatar>
       <div>
         <div className="flex items-center gap-x-2">
           <Avatar className="h-[48px] w-[48px] rounded-full">
@@ -27,7 +40,7 @@ const EventCard = ({ className,title="DevRel",onClick  }: IEventCardProps) => {
             </AvatarFallback>
           </Avatar>
           <Avatar className="h-[48px] w-[48px] rounded-full">
-            <AvatarImage />
+            <AvatarImage src={url} />
             <AvatarFallback>
               <div className="w-full h-full bg-emerald-500"></div>
             </AvatarFallback>

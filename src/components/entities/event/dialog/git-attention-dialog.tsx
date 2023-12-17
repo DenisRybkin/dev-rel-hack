@@ -12,7 +12,6 @@ export const GitAttentionDialog = (props: IGitAttentionDialogProps) => {
 
   return (
     <DialogAdapter isOpen={props.isOpen} onOpenChange={handleOpenChange} >
-      <div className='max-w-[512px]'>
         <div className="flex justify-center">
           <IoWarningOutline size={64} color="#000000" />
         </div>
@@ -23,7 +22,6 @@ export const GitAttentionDialog = (props: IGitAttentionDialogProps) => {
           портфолио.
         </div>
         <AdderGitAccount />
-      </div>
     </DialogAdapter>
   );
 };

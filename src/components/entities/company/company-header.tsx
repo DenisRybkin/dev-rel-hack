@@ -2,22 +2,26 @@ import React from 'react';
 import { Avatar, AvatarFallback, AvatarImage } from '@components/ui/avatar';
 import { FiAward, FiUsers } from 'react-icons/fi';
 import { Button } from '@components/ui/button';
-
-const CompanyHeader = () => {
+interface ICompanyHeaderProps{
+  title?:string;
+  description?:string;
+  url?:string
+}
+const CompanyHeader = ({title="Open Solutions", description="Наша команда обладает большим опытом в разработке комплексных решений, включая Web и мобильные приложения, серверы, облачные сервисы и т.д.",url=''}:ICompanyHeaderProps) => {
   return (
     <div>
       <div className='flex items-center gap-x-6'>
         <Avatar className='h-[284px] w-[284px] rounded-lg'>
-          <AvatarImage/>
+          <AvatarImage src={url}/>
           <AvatarFallback>
-            <AvatarImage/>
+            <AvatarImage />
             <AvatarFallback><div className='w-full h-full bg-emerald-500'></div></AvatarFallback>
           </AvatarFallback>
         </Avatar>
         <div className='flex flex-col justify-between h-[284px]'>
           <div>
-            <div className='text-[30px] font-semibold'>Open Solutions</div>
-            <div className='text-[16px] mt-1'>Наша команда обладает большим опытом в разработке комплексных решений, включая Web и мобильные приложения, серверы, облачные сервисы и т.д.</div>
+            <div className='text-[30px] font-semibold'>{title}</div>
+            <div className='text-[16px] mt-1'>{description}</div>
           </div>
           <div className='w-full'>
             <div className='flex items-center w-1/2 justify-between'>
