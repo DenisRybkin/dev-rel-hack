@@ -16,6 +16,7 @@ const eventRequestStatus = {
 export const EventPage = () => {
   const [event, setEvent] = useState<EventModel>({});
   const [showModal, setShowModal] = useState<boolean>(false);
+  const [banner,setBanner]=useState('')
   const [status, setStatus] = useState('');
   const [company,setCompany]=useState()
   const id = useParam('id');
@@ -31,10 +32,13 @@ export const EventPage = () => {
       () => {}
     );
     setEvent(newEvent);
-    console.log(newEvent)
+    console.log("event",newEvent)
     const newCompany = await api.company.getCompanyByID(Number(newEvent.company_id))
     setCompany(newCompany[0])
     console.log(newCompany)
+    const newBanner= await api.file.getById(40)
+    console.log(newBanner)
+    setBanner(newBanner)
   };
 
   return (
@@ -45,7 +49,7 @@ export const EventPage = () => {
       />
       <div className="flex gap-x-4">
         <Avatar className="h-[289px] w-[592px] rounded-lg">
-          <AvatarImage/>
+          <AvatarImage src={banner}/>
           <AvatarFallback>
             <div className="w-full h-full bg-emerald-500"></div>
           </AvatarFallback>

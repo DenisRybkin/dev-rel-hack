@@ -23,4 +23,17 @@ export class FileController extends ApiControllerBase {
       onError
     );
   }
+
+  async getById(
+    id:number,
+    onSuccess?: (model: ImageModel) => void,
+    onError?: (error: BaseProcessedError) => void
+  ): Promise<ImageModel> {
+    return await this.process<ImageModel>(
+      this.get(`${id}`),
+      onSuccess,
+      onError
+    );
+  }
+
 }
