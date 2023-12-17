@@ -66,7 +66,7 @@ export const SideBar = () => {
             <FiPlus className="text-gray" size={24} />
           </div>
           {companies.data?.map(item => (
-            <div className="flex flex-col items-center gap-2">
+            <div key={item.id} className="flex flex-col items-center gap-2">
               <Avatar className="h-12 w-12">
                 <AvatarImage src={item.avatar?.url} />
                 <AvatarFallback />

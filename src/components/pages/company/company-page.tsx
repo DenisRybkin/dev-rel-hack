@@ -9,19 +9,19 @@ import { useQuery } from '@tanstack/react-query';
 import { api } from '@lib/api/plugins';
 
 const CompanyPage = () => {
-  const { t } = useTranslation();
-  const navigate = useNavigate();
+  // const { t } = useTranslation();
+  // const navigate = useNavigate();
 
-  const handleError = () =>
-    void toast({ variant: 'destructive', title: t('toast:error.default') }) ||
-    navigate(-1);
+  // const handleError = () =>
+  //   void toast({ variant: 'destructive', title: t('toast:error.default') }) ||
+  //   navigate(-1);
 
-  const ownCompanyQuery = useQuery({
-    queryKey: [api.company.toString(), 'own'],
-    queryFn: () => api.company.own(),
-  });
+  // const ownCompanyQuery = useQuery({
+  //   queryKey: [api.company.toString(), 'own'],
+  //   queryFn: () => api.company.own(),
+  // });
 
-  console.log(ownCompanyQuery);
+  // console.log(ownCompanyQuery);
 
   return (
     <div>
